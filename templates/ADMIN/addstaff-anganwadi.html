@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block body %}<form id="form1" name="form1" method="post" action="addedstaffanganwadi">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>Staff</td>
+      <td><label>
+        <select name="st">
+            {% for i in val %}
+            <option value="{{ i.id }}">{{ i.firstname }}{{ i.lastname }}</option>
+            {% endfor %}
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Anganwadi</td>
+      <td><label>
+       <select name="aw">
+            {% for i in va %}
+
+                <option value="{{ i.id }}">{{ i.anganwadiname }}</option>
+           {% endfor %}
+       </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="Assign" class="btn btn-Primary"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

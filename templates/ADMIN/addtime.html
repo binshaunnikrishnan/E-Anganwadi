@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/addedtime">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>From Time </td>
+      <td><label>
+        <input type="time" name="textfield" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>To Time </td>
+      <td><label>
+        <input type="time" name="textfield2" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td><label>
+        <input type="date" name="date" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">
+        <label>
+        <input type="submit" name="Submit" value="Add"class="btn btn-Primary" />
+        </label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

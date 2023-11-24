@@ -1,0 +1,22 @@
+{% extends 'indexparent.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>From Time </td>
+      <td>To Time </td>
+      <td>Date</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+          <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.fromtime }}</td>
+      <td>&nbsp;{{ i.totime }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="278" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>From Time</td>
+      <td>To Time</td>
+      <td >Date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.fromtime }}</td>
+      <td>{{ i.totime }}</td>
+      <td>{{ i.date }}</td>
+      <td><div align="center"><a href="{% url 'delete_working_time' id=i.id %}" class="btn btn-danger">delete</a></div></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="5"><div align="center"><a href="add_time#about" class="btn btn-Primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

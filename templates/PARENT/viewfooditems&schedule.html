@@ -1,0 +1,22 @@
+{% extends 'indexparent.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>Day</td>
+      <td>Food</td>
+      <td>Time</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.day }}</td>
+      <td>&nbsp;{{ i.fooditem }}</td>
+      <td>{{ i.time }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

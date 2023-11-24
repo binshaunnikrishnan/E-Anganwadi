@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>Staff</td>
+      <td>Anganwadi</td>
+      <td>Date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.STAFF.firstname }}{{ i.STAFF.lastname }}</td>
+      <td>{{ i.ANGANWADI.anganwadiname }}</td>
+      <td>{{ i.date }}</td>
+      <td><p align="center"><a href="{% url 'delete_staffanganwadi' id=i.id %}"class="btn btn-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="add_staffanganwadi#about"class="btn btn-Primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

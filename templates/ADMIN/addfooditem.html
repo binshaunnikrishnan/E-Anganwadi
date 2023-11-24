@@ -1,0 +1,41 @@
+
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/add_items">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>Time</td>
+      <td><label>
+        <input type="time" name="textfield"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Food Item </td>
+      <td><label>
+        <input type="text" name="textfield2" class="form-control"required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Day</td>
+      <td><label>
+      <select name="select">
+        <option value="sunday">Sunday</option>
+        <option value="monday">Monday</option>
+        <option value="tuesday">Tuesday</option>
+        <option value="wednesday">Wednesday</option>
+        <option value="thursday">Thursday</option>
+        <option value="friday">Friday</option>
+        <option value="saturday">Saturday</option>
+      </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">
+        <label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-Primary" />
+        </label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

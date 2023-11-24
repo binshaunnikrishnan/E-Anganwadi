@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="manage_angan_search#about">
+  <table width="200" border="1"  class="table table-striped">
+    <<tr>
+      <td colspan="8">Name
+        <label>
+        <input type="name" name="textfield"  value="{{ search }}" required/>
+        <input type="submit" name="Submit" value="search" class="btn btn-Primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>slno</td>
+      <td>Name</td>
+      <td>Address</td>
+      <td>Phone</td>
+      <td>Email</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td><img src="{{ i.photo.url }}"width="100" height="100"><br><b>{{ i.anganwadiname }}</b> </td>
+      <td>{{ i.place }}<br>{{ i.post }}<br>{{ i.pin }}</td>
+      <td>{{ i.phone }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td><p align="center"><a href="{% url 'edit_angan' id=i.id %}#about" class="btn btn-success" >edit</a></p>
+      <p align="center"><a href="{% url 'delete_anagn' id=i.id %}" class="btn btn-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="/add_anganwadi#about" class="btn btn-Primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

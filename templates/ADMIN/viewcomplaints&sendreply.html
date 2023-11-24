@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="view_comp_search#about">
+  <table width="251" border="1"  class="table table-striped">
+    <tr>
+      <td colspan="5">Date
+        <label>
+        <input type="date" name="date"  value="{{ search }}"  required/>
+        <input type="submit" name="Submit" value="Search" class="btn btn-Primary" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>slno</td>
+      <td >Student</td>
+      <td>Complaint</td>
+      <td>Date</td>
+      <td&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.STUDENT.firstname }}{{ i.STUDENT.lastname }}</td>
+      <td>&nbsp;{{ i.complaint }}</td>
+      <td>{{ i.date }}</td>
+        {% if i.reply == 'pending' %}
+      <td><div align="center"><a href="{% url 'add_reply' id=i.id %}#about" class="btn btn-Primary">reply</a></div></td>
+    {% else %}
+    <td>{{ i.reply }}</td>
+    {% endif %}
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

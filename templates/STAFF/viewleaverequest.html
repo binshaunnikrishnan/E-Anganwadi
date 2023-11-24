@@ -1,0 +1,24 @@
+{% extends 'indexstaff.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>Student</td>
+      <td> Date</td>
+      <td>Request</td>
+      <td>Leave Date</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.STUDENT.firstname }}{{ i.STUDENT.lastname }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.request }}</td>
+      <td>&nbsp;{{ i.levedate }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

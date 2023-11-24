@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block body %}
+<form action="/edit_sylbus#about" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>Subject</td>
+      <td><label>
+        <input type="text" name="textfield" value="{{ val.subject }}" class="form-control"required pattern="[A-Z a-z.]{1,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Syllabus</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">
+        <input type="submit" name="Submit" value="Update"  class="btn btn-Primary"/>
+        <label></label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

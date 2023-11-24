@@ -1,0 +1,32 @@
+{% extends 'indexparent.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>slno</td>
+      <td>Student</td>
+      <td>Date</td>
+      <td>Request</td>
+      <td>Needed Date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.STUDENT.firstname }}{{ i.STUDENT.lastname }}</td>
+      <td>{{ i.date }}</td>
+      <td>{{ i.request }}</td>
+      <td>{{ i.levedate }}</td>
+      <td><div align="center">
+        <p><a href="{% url 'edit_leaverequest' id=i.id %}#about"class="btn btn-success">edit</a></p>
+        <p><a href="{% url 'delete_leave' id=i.id %}#about"class="btn btn-danger">delete</a></p>
+      </div></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="/add_leaverequest#about"class="btn btn-Primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

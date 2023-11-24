@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+{% block body %}
+    <head>
+{#     <script>#}
+{#    function convertToLowercase() {#}
+{#      var emailInput = document.getElementById('email');#}
+{#      emailInput.value = emailInput.value.toLowerCase();#}
+{#    }#}
+{#  </script>#}
+    </head>
+    <body>
+<form action="/addangana#about" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>Name</td>
+      <td><label>
+        <input type="text" name="textfield" class="form-control" required pattern="[A-Z a-z.]{3,25}"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield2" class="form-control" required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label>
+        <input type="text" name="textfield3"  class="form-control"required pattern="[A-Z a-z.]{3,25}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><label>
+        <input type="text" name="textfield4" class="form-control"required pattern="[0-9]{6}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+        <input type="text" name="textfield5" class="form-control"required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+        <input type="text" name="textfield6" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label>
+        <input type="file" name="file" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">
+        <label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-Primary" />
+        </label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+    </body>
+{% endblock %}

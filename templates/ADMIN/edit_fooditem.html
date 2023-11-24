@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/edits_food#about">
+  <table width="200" border="1"  class="table table-striped">
+    <tr>
+      <td>Time</td>
+      <td><label>
+        <input type="time" name="textfield" value="{{ tm }}"  class="form-control"required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Food Item </td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ val.fooditem }}"  required pattern="[A-Z a-z.]{1,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Day</td>
+      <td><label>
+      <select name="select">
+        <option value="sunday" {% if val.day == 'sunday' %} selected {% endif %}>Sunday</option>
+        <option value="monday" {% if val.day == 'monday' %} selected {% endif %} >Monday</option>
+        <option value="tuesday" {% if val.day == 'tuesday' %} selected {% endif %}>Tuesday</option>
+        <option value="wednesday" {% if val.day == 'wednesday' %} selected {% endif %}>Wednesday</option>
+        <option value="thursday" {% if val.day == 'thursday' %} selected {% endif %}>Thursday</option>
+        <option value="friday" {% if val.day == 'friday' %} selected {% endif %}>Friday</option>
+        <option value="saturday" {% if val.day == 'saturday' %} selected {% endif %}>Saturday</option>
+      </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center"><a href="#">
+        <label>
+        <input type="submit" name="Submit" value="Update" class="btn btn-Primary" />
+        </label>
+      </a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

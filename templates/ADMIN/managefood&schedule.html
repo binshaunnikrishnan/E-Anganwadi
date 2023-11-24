@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="search_day#about">
+  <table width="262" border="1"  class="table table-striped">
+    <tr>
+      <td colspan="5">Day
+        <label>
+        <select name="day">
+        <option value="sunday" {% if day == "sunday" %}selected{% endif %}>Sunday</option>
+        <option value="monday" {% if day == "monday" %}selected{% endif %}>Monday</option>
+        <option value="tuesday" {% if day == "Tuesday" %}selected{% endif %}>Tuesday</option>
+        <option value="wednesday"{% if day == "Wednesday" %}selected{% endif %}>Wednesday</option>
+        <option value="thursday"{% if day == "Thursday" %}selected{% endif %}>Thursday</option>
+        <option value="friday"{% if day == "Friday" %}selected{% endif %}>Friday</option>
+        <option value="saturday"{% if day == "Saturday" %}selected{% endif %}>Saturday</option>
+      </select>
+        <input type="submit" name="Submit" value="Search" class="btn btn-Primary"  />
+      </label></td>
+    </tr>
+    <tr>
+      <td>slno</td>
+      <td >Time</td>
+      <td >Food items</td>
+      <td >Day</td>
+      <td ></td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.time }}</td>
+      <td>&nbsp;{{ i.fooditem }}</td>
+      <td>&nbsp;{{ i.day}}</td>
+      <td><p align="center"><a href="{% url 'edit_fooditem' id=i.id %}#about" class="btn btn-success">edit</a></p>
+      <p align="center"><a href="{% url 'delete_fditem' id=i.id %}" class="btn btn-danger">delete</a></p></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="5"><div align="center"><a href="add_fooditem#about" class="btn btn-Primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
